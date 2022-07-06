@@ -5,27 +5,15 @@ export function EmployeeList(props) {
   return (
     <div className="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
       <div className="dataTable-top">
-        <div className="dataTable-dropdown">
-          <label>
-            <select className="dataTable-selector">
-              <option value="5">5</option>
-              <option value="10" selected="">
-                10
-              </option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-              <option value="25">25</option>
-            </select>{" "}
-            entries per page
-          </label>
-        </div>
-        <div className="dataTable-search">
-          <input
-            className="dataTable-input"
-            placeholder="Search..."
-            type="text"
-          />
-        </div>
+       <button type="button" className="btn btn-primary" onClick={()=> {
+            setMethod("post")
+            let toFill = {};
+            for (let key in items[0]) {
+              toFill[key] = key.toString();
+            }
+            setData(toFill);
+            setShowModal(true);
+          }}>Ajouter</button>
       </div>
       <div className="dataTable-container">
         <table className="table-bordered">
