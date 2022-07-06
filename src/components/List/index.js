@@ -18,7 +18,7 @@ export function EmployeeList(props) {
             }
             setData(toFill);
             setShowModal(true);
-          }}>Add</button>
+          }}>Ajouter</button>
         </div>
         <div className="dataTable-container" onClick={()=>showModal?setShowModal(false):null}>
           <table className="table-bordered">
