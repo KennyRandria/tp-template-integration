@@ -49,7 +49,7 @@ function App() {
                 .
               </Card>
               <Card title="DataTable Example">
-                <EmployeeList items={employees} />
+              <EmployeeList items={employees} showModal={showModal} setShowModal={setShowModal}/><EmployeeList items={employees} />
               </Card>
             </div>
           </main>
