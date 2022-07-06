@@ -9,8 +9,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  
+  const [employees,setEmployeesList] = useState([]);
   const [sidebarClass, setSidebarClass] = useState("sb-nav-fixed");
+  const [showModal,setShowModal] = useState(false)
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+      const {data} = response;
+      setEmployeesList(data);
+    }).catch((error) => console.error(error));
+  },[])
 
   function toggleSidebarClass() {
     setSidebarClass(
