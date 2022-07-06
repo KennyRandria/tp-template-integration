@@ -1,4 +1,6 @@
 import "./style.css";
+import {useState} from "react";
+import Modal from "../Axios/Axios";
 
 export function EmployeeList(props) {
   const { items } = props;
